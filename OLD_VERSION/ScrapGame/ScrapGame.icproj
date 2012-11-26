@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.0"
+	Name="ScrapGame"
+	ProjectGUID="{541E8566-11F7-4B61-A8D2-617631E034E5}"
+	VCNestedProjectGUID="{D8FE2186-4BF0-4B89-913F-6C26818E5AC5}"
+	VCNestedProjectFileName="ScrapGame.vcproj">
+	<Configurations/>
+	<Files/>
+</VisualStudioProject>
