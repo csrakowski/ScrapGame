@@ -181,6 +181,11 @@
 		0DB6D33A16637BCD00EBAD12 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D33916637BCD00EBAD12 /* GLES-Render.mm */; };
 		0DB6D33D16637BCD00EBAD12 /* PhysicsSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D33C16637BCD00EBAD12 /* PhysicsSprite.mm */; };
 		0DB6D33F16637BCD00EBAD12 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DB6D33E16637BCD00EBAD12 /* blocks.png */; };
+		ADBC4650166CCD7D008D462E /* Enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBC464C166CCD7D008D462E /* Enemy.png */; };
+		ADBC4651166CCD7D008D462E /* Interface.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBC464D166CCD7D008D462E /* Interface.png */; };
+		ADBC4652166CCD7D008D462E /* Magnet.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBC464E166CCD7D008D462E /* Magnet.png */; };
+		ADBC4653166CCD7D008D462E /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBC464F166CCD7D008D462E /* Player.png */; };
+		ADBC4657166CD05E008D462E /* ScrapMetal.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBC4656166CD05E008D462E /* ScrapMetal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -545,6 +550,12 @@
 		0DB6D33B16637BCD00EBAD12 /* PhysicsSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		0DB6D33C16637BCD00EBAD12 /* PhysicsSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicsSprite.mm; sourceTree = "<group>"; };
 		0DB6D33E16637BCD00EBAD12 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
+		ADBC464C166CCD7D008D462E /* Enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Enemy.png; path = Resources/Enemy.png; sourceTree = "<group>"; };
+		ADBC464D166CCD7D008D462E /* Interface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Interface.png; path = Resources/Interface.png; sourceTree = "<group>"; };
+		ADBC464E166CCD7D008D462E /* Magnet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Magnet.png; path = Resources/Magnet.png; sourceTree = "<group>"; };
+		ADBC464F166CCD7D008D462E /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player.png; path = Resources/Player.png; sourceTree = "<group>"; };
+		ADBC4655166CD05E008D462E /* ScrapMetal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrapMetal.h; path = Resources/ScrapMetal.h; sourceTree = "<group>"; };
+		ADBC4656166CD05E008D462E /* ScrapMetal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrapMetal.m; path = Resources/ScrapMetal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -613,6 +624,8 @@
 				0DB6D33916637BCD00EBAD12 /* GLES-Render.mm */,
 				0DB6D33B16637BCD00EBAD12 /* PhysicsSprite.h */,
 				0DB6D33C16637BCD00EBAD12 /* PhysicsSprite.mm */,
+				ADBC4655166CD05E008D462E /* ScrapMetal.h */,
+				ADBC4656166CD05E008D462E /* ScrapMetal.m */,
 				0DB6D12516637BC900EBAD12 /* Resources */,
 				0DB6D13F16637BC900EBAD12 /* libs */,
 				0DB6D32B16637BCD00EBAD12 /* Supporting Files */,
@@ -623,6 +636,10 @@
 		0DB6D12516637BC900EBAD12 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ADBC464C166CCD7D008D462E /* Enemy.png */,
+				ADBC464D166CCD7D008D462E /* Interface.png */,
+				ADBC464E166CCD7D008D462E /* Magnet.png */,
+				ADBC464F166CCD7D008D462E /* Player.png */,
 				0DB6D12616637BC900EBAD12 /* Default.png */,
 				0DB6D12816637BC900EBAD12 /* Default-Landscape~ipad.png */,
 				0DB6D12A16637BC900EBAD12 /* fps_images.png */,
@@ -1206,6 +1223,10 @@
 				0DB6D13E16637BC900EBAD12 /* iTunesArtwork in Resources */,
 				0DB6D27C16637BCB00EBAD12 /* ChangeLog in Resources */,
 				0DB6D33F16637BCD00EBAD12 /* blocks.png in Resources */,
+				ADBC4650166CCD7D008D462E /* Enemy.png in Resources */,
+				ADBC4651166CCD7D008D462E /* Interface.png in Resources */,
+				ADBC4652166CCD7D008D462E /* Magnet.png in Resources */,
+				ADBC4653166CCD7D008D462E /* Player.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,6 +1388,7 @@
 				0DB6D33716637BCD00EBAD12 /* IntroLayer.mm in Sources */,
 				0DB6D33A16637BCD00EBAD12 /* GLES-Render.mm in Sources */,
 				0DB6D33D16637BCD00EBAD12 /* PhysicsSprite.mm in Sources */,
+				ADBC4657166CD05E008D462E /* ScrapMetal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1472,6 +1494,7 @@
 				0DB6D34416637BCD00EBAD12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
