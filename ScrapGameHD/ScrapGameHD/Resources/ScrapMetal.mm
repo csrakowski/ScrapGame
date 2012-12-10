@@ -16,18 +16,24 @@
 	body_ = body;
 }
 
+-(void) tick
+{
+
+}
+
 // this method will only get called if the sprite is batched.
 // return YES if the physics values (angles, position ) changed
 // If you return NO, then nodeToParentTransform won't be called.
 -(BOOL) dirty
 {
-	return YES;
+	//return YES;
+    return (vector.Length() == 0);
 }
 
 // returns the transform matrix according the Chipmunk Body values
 -(CGAffineTransform) nodeToParentTransform
 {
-	b2Vec2 pos  = body_->GetPosition();
+	b2Vec2 pos = body_->GetPosition();
 	
 	float x = pos.x;
 	float y = pos.y;
@@ -43,8 +49,8 @@
 	float s = sinf(radians);
 	
 	if( ! CGPointEqualToPoint(anchorPointInPoints_, CGPointZero) ){
-		x += c*-anchorPointInPoints_.x + -s*-anchorPointInPoints_.y;
-		y += s*-anchorPointInPoints_.x + c*-anchorPointInPoints_.y;
+		x += c * -anchorPointInPoints_.x + -s * -anchorPointInPoints_.y;
+		y += s * -anchorPointInPoints_.x + c *  -anchorPointInPoints_.y;
 	}
 	
 	// Rot, Translate Matrix

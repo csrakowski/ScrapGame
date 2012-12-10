@@ -180,12 +180,14 @@
 		0DB6D33716637BCD00EBAD12 /* IntroLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D33616637BCD00EBAD12 /* IntroLayer.mm */; };
 		0DB6D33A16637BCD00EBAD12 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D33916637BCD00EBAD12 /* GLES-Render.mm */; };
 		0DB6D33D16637BCD00EBAD12 /* PhysicsSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D33C16637BCD00EBAD12 /* PhysicsSprite.mm */; };
-		0DB6D33F16637BCD00EBAD12 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DB6D33E16637BCD00EBAD12 /* blocks.png */; };
+		AD4188F21675E223000B68CC /* Scrap.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4188F11675E223000B68CC /* Scrap.png */; };
+		AD4188F81675E5A7000B68CC /* Magnet.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4188F71675E5A7000B68CC /* Magnet.mm */; };
+		AD4188FA1675E5ED000B68CC /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4188F91675E5ED000B68CC /* Player.mm */; };
 		ADBC4650166CCD7D008D462E /* Enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBC464C166CCD7D008D462E /* Enemy.png */; };
 		ADBC4651166CCD7D008D462E /* Interface.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBC464D166CCD7D008D462E /* Interface.png */; };
 		ADBC4652166CCD7D008D462E /* Magnet.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBC464E166CCD7D008D462E /* Magnet.png */; };
 		ADBC4653166CCD7D008D462E /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBC464F166CCD7D008D462E /* Player.png */; };
-		ADBC4657166CD05E008D462E /* ScrapMetal.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBC4656166CD05E008D462E /* ScrapMetal.m */; };
+		ADBC4657166CD05E008D462E /* ScrapMetal.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADBC4656166CD05E008D462E /* ScrapMetal.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -549,13 +551,17 @@
 		0DB6D33916637BCD00EBAD12 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		0DB6D33B16637BCD00EBAD12 /* PhysicsSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		0DB6D33C16637BCD00EBAD12 /* PhysicsSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicsSprite.mm; sourceTree = "<group>"; };
-		0DB6D33E16637BCD00EBAD12 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
+		AD4188F11675E223000B68CC /* Scrap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Scrap.png; path = Resources/Scrap.png; sourceTree = "<group>"; };
+		AD4188F31675E591000B68CC /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		AD4188F61675E5A7000B68CC /* Magnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magnet.h; sourceTree = "<group>"; };
+		AD4188F71675E5A7000B68CC /* Magnet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Magnet.mm; sourceTree = "<group>"; };
+		AD4188F91675E5ED000B68CC /* Player.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Player.mm; sourceTree = "<group>"; };
 		ADBC464C166CCD7D008D462E /* Enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Enemy.png; path = Resources/Enemy.png; sourceTree = "<group>"; };
 		ADBC464D166CCD7D008D462E /* Interface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Interface.png; path = Resources/Interface.png; sourceTree = "<group>"; };
 		ADBC464E166CCD7D008D462E /* Magnet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Magnet.png; path = Resources/Magnet.png; sourceTree = "<group>"; };
 		ADBC464F166CCD7D008D462E /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player.png; path = Resources/Player.png; sourceTree = "<group>"; };
 		ADBC4655166CD05E008D462E /* ScrapMetal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrapMetal.h; path = Resources/ScrapMetal.h; sourceTree = "<group>"; };
-		ADBC4656166CD05E008D462E /* ScrapMetal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrapMetal.m; path = Resources/ScrapMetal.m; sourceTree = "<group>"; };
+		ADBC4656166CD05E008D462E /* ScrapMetal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ScrapMetal.mm; path = Resources/ScrapMetal.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -625,10 +631,14 @@
 				0DB6D33B16637BCD00EBAD12 /* PhysicsSprite.h */,
 				0DB6D33C16637BCD00EBAD12 /* PhysicsSprite.mm */,
 				ADBC4655166CD05E008D462E /* ScrapMetal.h */,
-				ADBC4656166CD05E008D462E /* ScrapMetal.m */,
+				ADBC4656166CD05E008D462E /* ScrapMetal.mm */,
 				0DB6D12516637BC900EBAD12 /* Resources */,
 				0DB6D13F16637BC900EBAD12 /* libs */,
 				0DB6D32B16637BCD00EBAD12 /* Supporting Files */,
+				AD4188F31675E591000B68CC /* Player.h */,
+				AD4188F91675E5ED000B68CC /* Player.mm */,
+				AD4188F61675E5A7000B68CC /* Magnet.h */,
+				AD4188F71675E5A7000B68CC /* Magnet.mm */,
 			);
 			path = ScrapGameHD;
 			sourceTree = "<group>";
@@ -636,6 +646,7 @@
 		0DB6D12516637BC900EBAD12 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD4188F11675E223000B68CC /* Scrap.png */,
 				ADBC464C166CCD7D008D462E /* Enemy.png */,
 				ADBC464D166CCD7D008D462E /* Interface.png */,
 				ADBC464E166CCD7D008D462E /* Magnet.png */,
@@ -653,7 +664,6 @@
 				0DB6D13A16637BC900EBAD12 /* Icon@2x.png */,
 				0DB6D13C16637BC900EBAD12 /* Info.plist */,
 				0DB6D13D16637BC900EBAD12 /* iTunesArtwork */,
-				0DB6D33E16637BCD00EBAD12 /* blocks.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1222,11 +1232,11 @@
 				0DB6D13B16637BC900EBAD12 /* Icon@2x.png in Resources */,
 				0DB6D13E16637BC900EBAD12 /* iTunesArtwork in Resources */,
 				0DB6D27C16637BCB00EBAD12 /* ChangeLog in Resources */,
-				0DB6D33F16637BCD00EBAD12 /* blocks.png in Resources */,
 				ADBC4650166CCD7D008D462E /* Enemy.png in Resources */,
 				ADBC4651166CCD7D008D462E /* Interface.png in Resources */,
 				ADBC4652166CCD7D008D462E /* Magnet.png in Resources */,
 				ADBC4653166CCD7D008D462E /* Player.png in Resources */,
+				AD4188F21675E223000B68CC /* Scrap.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1388,7 +1398,9 @@
 				0DB6D33716637BCD00EBAD12 /* IntroLayer.mm in Sources */,
 				0DB6D33A16637BCD00EBAD12 /* GLES-Render.mm in Sources */,
 				0DB6D33D16637BCD00EBAD12 /* PhysicsSprite.mm in Sources */,
-				ADBC4657166CD05E008D462E /* ScrapMetal.m in Sources */,
+				ADBC4657166CD05E008D462E /* ScrapMetal.mm in Sources */,
+				AD4188F81675E5A7000B68CC /* Magnet.mm in Sources */,
+				AD4188FA1675E5ED000B68CC /* Player.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

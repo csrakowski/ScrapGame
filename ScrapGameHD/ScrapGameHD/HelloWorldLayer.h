@@ -24,6 +24,9 @@
 @interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
 	CCTexture2D *spriteTexture_;	// weak ref
+    CCTexture2D *scrapTexture_;     // weak ref
+    CCTexture2D *playerTexture_;    // weak ref
+    CCTexture2D *magnetTexture_;    // weak ref
 	b2World* world;					// strong ref
 	GLESDebugDraw *m_debugDraw;		// strong ref
 }

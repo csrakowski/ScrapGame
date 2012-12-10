@@ -47,8 +47,8 @@
 	float s = sinf(radians);
 	
 	if( ! CGPointEqualToPoint(anchorPointInPoints_, CGPointZero) ){
-		x += c*-anchorPointInPoints_.x + -s*-anchorPointInPoints_.y;
-		y += s*-anchorPointInPoints_.x + c*-anchorPointInPoints_.y;
+		x += c * -anchorPointInPoints_.x + -s * -anchorPointInPoints_.y;
+		y += s * -anchorPointInPoints_.x + c *  -anchorPointInPoints_.y;
 	}
 	
 	// Rot, Translate Matrix

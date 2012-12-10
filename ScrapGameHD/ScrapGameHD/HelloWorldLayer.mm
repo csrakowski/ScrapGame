@@ -15,8 +15,14 @@
 #import "PhysicsSprite.h"
 #import "ScrapMetal.h"
 
+#import "Player.h"
+#import "Magnet.h"
+
 enum {
-	kTagParentNode = 1,
+	kTagNodePlayer = 1,
+    kTagNodeMagnet,
+    kTagNodeEnemy,
+    kTagNodeScrap,
 };
 
 
@@ -64,19 +70,38 @@ enum {
 		
 		//Set up sprite
 		
-#if 1
 		// Use batch node. Faster
-		CCSpriteBatchNode *parent = [CCSpriteBatchNode batchNodeWithFile:@"Enemy.png" capacity:100];
-		spriteTexture_ = [parent texture];
-#else
-		// doesn't use batch node. Slower
-		spriteTexture_ = [[CCTextureCache sharedTextureCache] addImage:@"Enemy.png"];
-		CCNode *parent = [CCNode node];
-#endif
-		[self addChild:parent z:0 tag:kTagParentNode];
+		CCSpriteBatchNode *spriteParent = [CCSpriteBatchNode batchNodeWithFile:@"Enemy.png" capacity:100];
+		spriteTexture_ = [spriteParent texture];
+        [self addChild:spriteParent z:0 tag:kTagNodeEnemy];
+        
+        CCSpriteBatchNode *scrapParent = [CCSpriteBatchNode batchNodeWithFile:@"Scrap.png" capacity:100];
+		scrapTexture_ = [scrapParent texture];
+        [self addChild:scrapParent z:0 tag:kTagNodeScrap];
+        
+        CCSpriteBatchNode *playerParent = [CCSpriteBatchNode batchNodeWithFile:@"Player.png" capacity:1];
+		playerTexture_ = [playerParent texture];
+        [self addChild:playerParent z:0 tag:kTagNodePlayer];
+        
+        CCSpriteBatchNode *magnetParent = [CCSpriteBatchNode batchNodeWithFile:@"Magnet.png" capacity:1];
+		magnetTexture_ = [magnetParent texture];
+        [self addChild:magnetParent z:0 tag:kTagNodeMagnet];
 		
 		
+        Player *player = [Player spriteWithTexture:playerTexture_ rect:CGRectMake(0,0,128,128)];
+        [playerParent addChild:player];
+        player.position = ccp(s.width/2, s.height/2);
+        
+        
+        Magnet *magnet = [Magnet spriteWithTexture:magnetTexture_ rect:CGRectMake(0,0,64,64)];
+        
+        [magnetParent addChild:magnet];
+        magnet.position = ccp(s.width/2, s.height/2);
+        player.magnet = magnet;
+        
 		[self addNewScrapAtPosition:ccp(s.width/2, s.height/2)];
+        
+        
 		
 		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tap screen" fontName:@"Marker Felt" fontSize:32];
 		[self addChild:label z:0];
@@ -217,18 +242,16 @@ enum {
 	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
 	
 	kmGLPushMatrix();
-	
 	world->DrawDebugData();	
-	
 	kmGLPopMatrix();
 }
 
 -(void) addNewScrapAtPosition:(CGPoint)p
 {
-	CCLOG(@"Add sprite %0.2f x %02.f",p.x,p.y);
-	CCNode *parent = [self getChildByTag:kTagParentNode];
+	CCLOG(@"Add scrap %0.2f x %02.f",p.x,p.y);
+	CCNode *parent = [self getChildByTag:kTagNodeScrap];
 	
-	ScrapMetal *sprite = [ScrapMetal spriteWithTexture:spriteTexture_ rect:CGRectMake(0,0,128,128)];
+	ScrapMetal *sprite = [ScrapMetal spriteWithTexture:scrapTexture_ rect:CGRectMake(0,0,64,64)];
 	[parent addChild:sprite];
 	
 	sprite.position = ccp( p.x, p.y);
@@ -256,8 +279,8 @@ enum {
 
 -(void) addNewEnemyAtPosition:(CGPoint)p
 {
-	CCLOG(@"Add sprite %0.2f x %02.f",p.x,p.y);
-	CCNode *parent = [self getChildByTag:kTagParentNode];
+	CCLOG(@"Add enemy %0.2f x %02.f",p.x,p.y);
+	CCNode *parent = [self getChildByTag:kTagNodeEnemy];
 	
 	PhysicsSprite *sprite = [PhysicsSprite spriteWithTexture:spriteTexture_ rect:CGRectMake(0,0,128,128)];
 	[parent addChild:sprite];
@@ -308,7 +331,7 @@ enum {
 		
 		location = [[CCDirector sharedDirector] convertToGL: location];
 		
-		[self addNewEnemyAtPosition: location];
+		[self addNewScrapAtPosition: location];
 	}
 }
 
