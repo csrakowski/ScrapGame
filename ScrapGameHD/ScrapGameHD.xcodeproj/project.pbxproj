@@ -623,27 +623,12 @@
 		0DB6D12416637BC900EBAD12 /* ScrapGameHD */ = {
 			isa = PBXGroup;
 			children = (
-				AD057918167F1B800085F9E4 /* GameLayer.h */,
-				AD057919167F1B800085F9E4 /* GameLayer.mm */,
-				0DB6D32F16637BCD00EBAD12 /* AppDelegate.h */,
-				0DB6D33016637BCD00EBAD12 /* AppDelegate.mm */,
-				0DB6D33216637BCD00EBAD12 /* MenuLayer.h */,
-				0DB6D33316637BCD00EBAD12 /* MenuLayer.mm */,
-				0DB6D33516637BCD00EBAD12 /* IntroLayer.h */,
-				0DB6D33616637BCD00EBAD12 /* IntroLayer.mm */,
-				0DB6D33816637BCD00EBAD12 /* GLES-Render.h */,
-				0DB6D33916637BCD00EBAD12 /* GLES-Render.mm */,
-				0DB6D33B16637BCD00EBAD12 /* PhysicsSprite.h */,
-				0DB6D33C16637BCD00EBAD12 /* PhysicsSprite.mm */,
-				ADBC4655166CD05E008D462E /* ScrapMetal.h */,
-				ADBC4656166CD05E008D462E /* ScrapMetal.mm */,
+				AD05791D167F2CAC0085F9E4 /* Engine */,
+				AD05791B167F2C5D0085F9E4 /* Scenes */,
+				AD05791C167F2C680085F9E4 /* Objects */,
 				0DB6D12516637BC900EBAD12 /* Resources */,
 				0DB6D13F16637BC900EBAD12 /* libs */,
 				0DB6D32B16637BCD00EBAD12 /* Supporting Files */,
-				AD4188F31675E591000B68CC /* Player.h */,
-				AD4188F91675E5ED000B68CC /* Player.mm */,
-				AD4188F61675E5A7000B68CC /* Magnet.h */,
-				AD4188F71675E5A7000B68CC /* Magnet.mm */,
 			);
 			path = ScrapGameHD;
 			sourceTree = "<group>";
@@ -1172,6 +1157,45 @@
 				0DB6D32D16637BCD00EBAD12 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD05791B167F2C5D0085F9E4 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0DB6D33516637BCD00EBAD12 /* IntroLayer.h */,
+				0DB6D33616637BCD00EBAD12 /* IntroLayer.mm */,
+				0DB6D33216637BCD00EBAD12 /* MenuLayer.h */,
+				0DB6D33316637BCD00EBAD12 /* MenuLayer.mm */,
+				AD057918167F1B800085F9E4 /* GameLayer.h */,
+				AD057919167F1B800085F9E4 /* GameLayer.mm */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		AD05791C167F2C680085F9E4 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				AD4188F31675E591000B68CC /* Player.h */,
+				AD4188F91675E5ED000B68CC /* Player.mm */,
+				AD4188F61675E5A7000B68CC /* Magnet.h */,
+				AD4188F71675E5A7000B68CC /* Magnet.mm */,
+				0DB6D33B16637BCD00EBAD12 /* PhysicsSprite.h */,
+				0DB6D33C16637BCD00EBAD12 /* PhysicsSprite.mm */,
+				ADBC4655166CD05E008D462E /* ScrapMetal.h */,
+				ADBC4656166CD05E008D462E /* ScrapMetal.mm */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		AD05791D167F2CAC0085F9E4 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				0DB6D32F16637BCD00EBAD12 /* AppDelegate.h */,
+				0DB6D33016637BCD00EBAD12 /* AppDelegate.mm */,
+				0DB6D33816637BCD00EBAD12 /* GLES-Render.h */,
+				0DB6D33916637BCD00EBAD12 /* GLES-Render.mm */,
+			);
+			name = Engine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
