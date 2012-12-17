@@ -7,7 +7,7 @@
 //
 
 // Import the interfaces
-#import "HelloWorldLayer.h"
+#import "GameLayer.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -26,16 +26,9 @@ enum {
 };
 
 
-#pragma mark - HelloWorldLayer
+#pragma mark - GameLayer
 
-@interface HelloWorldLayer()
--(void) initPhysics;
--(void) addNewScrapAtPosition:(CGPoint)p;
--(void) addNewEnemyAtPosition:(CGPoint)p;
--(void) createMenu;
-@end
-
-@implementation HelloWorldLayer
+@implementation GameLayer
 
 +(CCScene *) scene
 {
@@ -43,7 +36,7 @@ enum {
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
+	GameLayer *layer = [GameLayer node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -65,8 +58,6 @@ enum {
 		// init physics
 		[self initPhysics];
 		
-		// create reset button
-		[self createMenu];
 		
 		//Set up sprite
 		
@@ -101,7 +92,6 @@ enum {
         
 		[self addNewScrapAtPosition:ccp(s.width/2, s.height/2)];
         
-        
 		
 		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tap screen" fontName:@"Marker Felt" fontSize:32];
 		[self addChild:label z:0];
@@ -123,55 +113,6 @@ enum {
 	
 	[super dealloc];
 }	
-
--(void) createMenu
-{
-	// Default font size will be 22 points.
-	[CCMenuItemFont setFontSize:22];
-	
-	// Reset Button
-	CCMenuItemLabel *reset = [CCMenuItemFont itemWithString:@"Reset" block:^(id sender){
-		[[CCDirector sharedDirector] replaceScene: [HelloWorldLayer scene]];
-	}];
-	
-	// Achievement Menu Item using blocks
-	CCMenuItem *itemAchievement = [CCMenuItemFont itemWithString:@"Achievements" block:^(id sender) {
-		
-		
-		GKAchievementViewController *achivementViewController = [[GKAchievementViewController alloc] init];
-		achivementViewController.achievementDelegate = self;
-		
-		AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-		
-		[[app navController] presentModalViewController:achivementViewController animated:YES];
-		
-		[achivementViewController release];
-	}];
-	
-	// Leaderboard Menu Item using blocks
-	CCMenuItem *itemLeaderboard = [CCMenuItemFont itemWithString:@"Leaderboard" block:^(id sender) {
-		
-		
-		GKLeaderboardViewController *leaderboardViewController = [[GKLeaderboardViewController alloc] init];
-		leaderboardViewController.leaderboardDelegate = self;
-		
-		AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-		
-		[[app navController] presentModalViewController:leaderboardViewController animated:YES];
-		
-		[leaderboardViewController release];
-	}];
-	
-	CCMenu *menu = [CCMenu menuWithItems:itemAchievement, itemLeaderboard, reset, nil];
-	
-	[menu alignItemsVertically];
-	
-	CGSize size = [[CCDirector sharedDirector] winSize];
-	[menu setPosition:ccp( size.width/2, size.height/2)];
-	
-	
-	[self addChild: menu z:-1];	
-}
 
 -(void) initPhysics
 {

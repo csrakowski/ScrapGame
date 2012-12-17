@@ -176,10 +176,11 @@
 		0DB6D32816637BCD00EBAD12 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D32716637BCD00EBAD12 /* b2Rope.cpp */; };
 		0DB6D32E16637BCD00EBAD12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D32D16637BCD00EBAD12 /* main.m */; };
 		0DB6D33116637BCD00EBAD12 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D33016637BCD00EBAD12 /* AppDelegate.mm */; };
-		0DB6D33416637BCD00EBAD12 /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D33316637BCD00EBAD12 /* HelloWorldLayer.mm */; };
+		0DB6D33416637BCD00EBAD12 /* MenuLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D33316637BCD00EBAD12 /* MenuLayer.mm */; };
 		0DB6D33716637BCD00EBAD12 /* IntroLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D33616637BCD00EBAD12 /* IntroLayer.mm */; };
 		0DB6D33A16637BCD00EBAD12 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D33916637BCD00EBAD12 /* GLES-Render.mm */; };
 		0DB6D33D16637BCD00EBAD12 /* PhysicsSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DB6D33C16637BCD00EBAD12 /* PhysicsSprite.mm */; };
+		AD05791A167F1B800085F9E4 /* GameLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD057919167F1B800085F9E4 /* GameLayer.mm */; };
 		AD4188F21675E223000B68CC /* Scrap.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4188F11675E223000B68CC /* Scrap.png */; };
 		AD4188F81675E5A7000B68CC /* Magnet.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4188F71675E5A7000B68CC /* Magnet.mm */; };
 		AD4188FA1675E5ED000B68CC /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4188F91675E5ED000B68CC /* Player.mm */; };
@@ -543,14 +544,16 @@
 		0DB6D32D16637BCD00EBAD12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0DB6D32F16637BCD00EBAD12 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0DB6D33016637BCD00EBAD12 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		0DB6D33216637BCD00EBAD12 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		0DB6D33316637BCD00EBAD12 /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
+		0DB6D33216637BCD00EBAD12 /* MenuLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
+		0DB6D33316637BCD00EBAD12 /* MenuLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MenuLayer.mm; sourceTree = "<group>"; };
 		0DB6D33516637BCD00EBAD12 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		0DB6D33616637BCD00EBAD12 /* IntroLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = IntroLayer.mm; sourceTree = "<group>"; };
 		0DB6D33816637BCD00EBAD12 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		0DB6D33916637BCD00EBAD12 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		0DB6D33B16637BCD00EBAD12 /* PhysicsSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		0DB6D33C16637BCD00EBAD12 /* PhysicsSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicsSprite.mm; sourceTree = "<group>"; };
+		AD057918167F1B800085F9E4 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		AD057919167F1B800085F9E4 /* GameLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameLayer.mm; sourceTree = "<group>"; };
 		AD4188F11675E223000B68CC /* Scrap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Scrap.png; path = Resources/Scrap.png; sourceTree = "<group>"; };
 		AD4188F31675E591000B68CC /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		AD4188F61675E5A7000B68CC /* Magnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magnet.h; sourceTree = "<group>"; };
@@ -620,10 +623,12 @@
 		0DB6D12416637BC900EBAD12 /* ScrapGameHD */ = {
 			isa = PBXGroup;
 			children = (
+				AD057918167F1B800085F9E4 /* GameLayer.h */,
+				AD057919167F1B800085F9E4 /* GameLayer.mm */,
 				0DB6D32F16637BCD00EBAD12 /* AppDelegate.h */,
 				0DB6D33016637BCD00EBAD12 /* AppDelegate.mm */,
-				0DB6D33216637BCD00EBAD12 /* HelloWorldLayer.h */,
-				0DB6D33316637BCD00EBAD12 /* HelloWorldLayer.mm */,
+				0DB6D33216637BCD00EBAD12 /* MenuLayer.h */,
+				0DB6D33316637BCD00EBAD12 /* MenuLayer.mm */,
 				0DB6D33516637BCD00EBAD12 /* IntroLayer.h */,
 				0DB6D33616637BCD00EBAD12 /* IntroLayer.mm */,
 				0DB6D33816637BCD00EBAD12 /* GLES-Render.h */,
@@ -1394,13 +1399,14 @@
 				0DB6D32816637BCD00EBAD12 /* b2Rope.cpp in Sources */,
 				0DB6D32E16637BCD00EBAD12 /* main.m in Sources */,
 				0DB6D33116637BCD00EBAD12 /* AppDelegate.mm in Sources */,
-				0DB6D33416637BCD00EBAD12 /* HelloWorldLayer.mm in Sources */,
+				0DB6D33416637BCD00EBAD12 /* MenuLayer.mm in Sources */,
 				0DB6D33716637BCD00EBAD12 /* IntroLayer.mm in Sources */,
 				0DB6D33A16637BCD00EBAD12 /* GLES-Render.mm in Sources */,
 				0DB6D33D16637BCD00EBAD12 /* PhysicsSprite.mm in Sources */,
 				ADBC4657166CD05E008D462E /* ScrapMetal.mm in Sources */,
 				AD4188F81675E5A7000B68CC /* Magnet.mm in Sources */,
 				AD4188FA1675E5ED000B68CC /* Player.mm in Sources */,
+				AD05791A167F1B800085F9E4 /* GameLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  HelloWorldLayer.h
+//  GameLayer.h
 //  ScrapGameHD
 //
 //  Created by Frits de Vos on 26-11-12.
@@ -20,8 +20,8 @@
 //to define the ratio so that your most common object type is 1x1 metre.
 #define PTM_RATIO 32
 
-// HelloWorldLayer
-@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+// GameLayer
+@interface GameLayer : CCLayer
 {
 	CCTexture2D *spriteTexture_;	// weak ref
     CCTexture2D *scrapTexture_;     // weak ref
@@ -30,6 +30,12 @@
 	b2World* world;					// strong ref
 	GLESDebugDraw *m_debugDraw;		// strong ref
 }
+
+
+-(void) initPhysics;
+-(void) addNewScrapAtPosition:(CGPoint)p;
+-(void) addNewEnemyAtPosition:(CGPoint)p;
+
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
