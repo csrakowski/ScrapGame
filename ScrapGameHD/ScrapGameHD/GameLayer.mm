@@ -6,6 +6,8 @@
 //  Copyright __MyCompanyName__ 2012. All rights reserved.
 //
 
+#define BACKGROUND_SCROLL_SPEED 4
+
 // Import the interfaces
 #import "GameLayer.h"
 
@@ -29,6 +31,14 @@ enum {
 #pragma mark - GameLayer
 
 @implementation GameLayer
+{
+    CCLabelTTF *label;
+    NSInteger score;
+    CCSprite* backgroundLayer0;
+    CCSprite* backgroundLayer1;
+    CCSprite* backgroundLayer2;
+    CCSprite* backgroundLayer3;
+}
 
 +(CCScene *) scene
 {
@@ -58,25 +68,24 @@ enum {
 		// init physics
 		[self initPhysics];
 		
-		
-		//Set up sprite
-		
-		// Use batch node. Faster
+        //Set up sprites
+        [self setupBackgroundImage:s];
+
 		CCSpriteBatchNode *spriteParent = [CCSpriteBatchNode batchNodeWithFile:@"Enemy.png" capacity:100];
 		spriteTexture_ = [spriteParent texture];
-        [self addChild:spriteParent z:0 tag:kTagNodeEnemy];
+        [self addChild:spriteParent z:10 tag:kTagNodeEnemy];
         
         CCSpriteBatchNode *scrapParent = [CCSpriteBatchNode batchNodeWithFile:@"Scrap.png" capacity:100];
 		scrapTexture_ = [scrapParent texture];
-        [self addChild:scrapParent z:0 tag:kTagNodeScrap];
+        [self addChild:scrapParent z:11 tag:kTagNodeScrap];
         
         CCSpriteBatchNode *playerParent = [CCSpriteBatchNode batchNodeWithFile:@"Player.png" capacity:1];
 		playerTexture_ = [playerParent texture];
-        [self addChild:playerParent z:0 tag:kTagNodePlayer];
+        [self addChild:playerParent z:98 tag:kTagNodePlayer];
         
         CCSpriteBatchNode *magnetParent = [CCSpriteBatchNode batchNodeWithFile:@"Magnet.png" capacity:1];
 		magnetTexture_ = [magnetParent texture];
-        [self addChild:magnetParent z:0 tag:kTagNodeMagnet];
+        [self addChild:magnetParent z:99 tag:kTagNodeMagnet];
 		
 		
         Player *player = [Player spriteWithTexture:playerTexture_ rect:CGRectMake(0,0,128,128)];
@@ -89,15 +98,79 @@ enum {
         magnet.position = ccp(s.width/2, s.height/2);
         player.magnet = magnet;
         
-		
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tap screen" fontName:@"Marker Felt" fontSize:32];
-		[self addChild:label z:0];
+        label = [CCLabelTTF labelWithString:@"Score: 0000" fontName:@"Marker Felt" fontSize:32];
+        [label setHorizontalAlignment:kCCTextAlignmentRight];
 		[label setColor:ccc3(0,0,255)];
-		label.position = ccp( s.width/2, s.height-50);
+		label.position = ccp(s.width-85, s.height-20);
+        [self addChild:label z:99];
 		
 		[self scheduleUpdate];
 	}
 	return self;
+}
+
+//Create our scrolling background
+- (void)setupBackgroundImage:(CGSize)size
+{
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    //create both sprite to handle background
+    backgroundLayer0 = [CCSprite spriteWithFile:@"Stars.png" rect:rect];
+    backgroundLayer1 = [CCSprite spriteWithFile:@"Stars.png" rect:rect];
+    
+    backgroundLayer2 = [CCSprite spriteWithFile:@"Nebula.png" rect:rect];
+    backgroundLayer2.opacity = 128;
+    
+    backgroundLayer3 = [CCSprite spriteWithFile:@"Nebula.png" rect:rect];
+    backgroundLayer3.opacity = 128;
+    
+    backgroundLayer0.position = ccp(size.width/2, size.height/2);
+    backgroundLayer1.position = ccp(size.width/2, size.height*1.5);
+    backgroundLayer2.position = ccp(size.width/2, size.height/2);
+    backgroundLayer3.position = ccp(size.width/2, (size.height*1.5));
+    
+    //add them to main layer
+    [self addChild:backgroundLayer0 z:0];
+    [self addChild:backgroundLayer1 z:0];
+    [self addChild:backgroundLayer2 z:1];
+    [self addChild:backgroundLayer3 z:1];
+    
+    //add schedule to move backgrounds
+    [self schedule:@selector(scroll:)];
+}
+
+- (void)scroll:(ccTime)dt {
+    
+    CGSize size = [CCDirector sharedDirector].winSize;
+    
+    backgroundLayer0.position = ccp( backgroundLayer0.position.x, backgroundLayer0.position.y - BACKGROUND_SCROLL_SPEED);
+    backgroundLayer1.position = ccp( backgroundLayer1.position.x, backgroundLayer1.position.y - BACKGROUND_SCROLL_SPEED);
+    
+    backgroundLayer2.position = ccp( backgroundLayer2.position.x, backgroundLayer2.position.y - 2 * BACKGROUND_SCROLL_SPEED);
+    backgroundLayer3.position = ccp( backgroundLayer3.position.x, backgroundLayer3.position.y - 2 * BACKGROUND_SCROLL_SPEED);
+    
+    //reset position when they are off from view.
+    if (backgroundLayer0.position.y <= -(size.height/2)) {
+        backgroundLayer0.position = ccp(backgroundLayer0.position.x, (size.height*1.5));
+    } else if (backgroundLayer1.position.y <= -(size.height/2)) {
+        backgroundLayer1.position = ccp(backgroundLayer1.position.x, (size.height*1.5));
+    }
+    
+    if (backgroundLayer2.position.y <= -(size.height/2)) {
+        backgroundLayer2.position = ccp(backgroundLayer2.position.x, (size.height*1.5));
+    } else if (backgroundLayer3.position.y <= -(size.height/2)) {
+        backgroundLayer3.position = ccp(backgroundLayer3.position.x, (size.height*1.5));
+    }
+}
+
+-(void)incrementScore:(int)points
+{
+    [self setScore:(score + points)];
+}
+
+-(void) setScore:(int)newScore
+{
+    score = newScore;
+    [label setString:[NSString stringWithFormat:@"Score: %04d", score]];
 }
 
 -(void) dealloc
@@ -276,6 +349,8 @@ enum {
 		
 		location = [[CCDirector sharedDirector] convertToGL: location];
 		
+        
+        [self incrementScore:150];
 		[self addNewRandomScrap];
 	}
 }

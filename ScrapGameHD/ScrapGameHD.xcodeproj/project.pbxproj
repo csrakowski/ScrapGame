@@ -184,6 +184,9 @@
 		AD4188F21675E223000B68CC /* Scrap.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4188F11675E223000B68CC /* Scrap.png */; };
 		AD4188F81675E5A7000B68CC /* Magnet.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4188F71675E5A7000B68CC /* Magnet.mm */; };
 		AD4188FA1675E5ED000B68CC /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4188F91675E5ED000B68CC /* Player.mm */; };
+		AD63BCAB169AE45600C50960 /* Nebula.png in Resources */ = {isa = PBXBuildFile; fileRef = AD63BCA8169AE45600C50960 /* Nebula.png */; };
+		AD63BCAC169AE45600C50960 /* Nebula2.png in Resources */ = {isa = PBXBuildFile; fileRef = AD63BCA9169AE45600C50960 /* Nebula2.png */; };
+		AD63BCAD169AE45600C50960 /* Stars.png in Resources */ = {isa = PBXBuildFile; fileRef = AD63BCAA169AE45600C50960 /* Stars.png */; };
 		ADBC4650166CCD7D008D462E /* Enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBC464C166CCD7D008D462E /* Enemy.png */; };
 		ADBC4651166CCD7D008D462E /* Interface.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBC464D166CCD7D008D462E /* Interface.png */; };
 		ADBC4652166CCD7D008D462E /* Magnet.png in Resources */ = {isa = PBXBuildFile; fileRef = ADBC464E166CCD7D008D462E /* Magnet.png */; };
@@ -559,6 +562,9 @@
 		AD4188F61675E5A7000B68CC /* Magnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magnet.h; sourceTree = "<group>"; };
 		AD4188F71675E5A7000B68CC /* Magnet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Magnet.mm; sourceTree = "<group>"; };
 		AD4188F91675E5ED000B68CC /* Player.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Player.mm; sourceTree = "<group>"; };
+		AD63BCA8169AE45600C50960 /* Nebula.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nebula.png; path = Resources/Nebula.png; sourceTree = "<group>"; };
+		AD63BCA9169AE45600C50960 /* Nebula2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nebula2.png; path = Resources/Nebula2.png; sourceTree = "<group>"; };
+		AD63BCAA169AE45600C50960 /* Stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Stars.png; path = Resources/Stars.png; sourceTree = "<group>"; };
 		ADBC464C166CCD7D008D462E /* Enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Enemy.png; path = Resources/Enemy.png; sourceTree = "<group>"; };
 		ADBC464D166CCD7D008D462E /* Interface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Interface.png; path = Resources/Interface.png; sourceTree = "<group>"; };
 		ADBC464E166CCD7D008D462E /* Magnet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Magnet.png; path = Resources/Magnet.png; sourceTree = "<group>"; };
@@ -636,6 +642,9 @@
 		0DB6D12516637BC900EBAD12 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD63BCA8169AE45600C50960 /* Nebula.png */,
+				AD63BCA9169AE45600C50960 /* Nebula2.png */,
+				AD63BCAA169AE45600C50960 /* Stars.png */,
 				AD4188F11675E223000B68CC /* Scrap.png */,
 				ADBC464C166CCD7D008D462E /* Enemy.png */,
 				ADBC464D166CCD7D008D462E /* Interface.png */,
@@ -1266,6 +1275,9 @@
 				ADBC4652166CCD7D008D462E /* Magnet.png in Resources */,
 				ADBC4653166CCD7D008D462E /* Player.png in Resources */,
 				AD4188F21675E223000B68CC /* Scrap.png in Resources */,
+				AD63BCAB169AE45600C50960 /* Nebula.png in Resources */,
+				AD63BCAC169AE45600C50960 /* Nebula2.png in Resources */,
+				AD63BCAD169AE45600C50960 /* Stars.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
