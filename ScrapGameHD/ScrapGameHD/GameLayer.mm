@@ -85,7 +85,6 @@ enum {
         
         
         Magnet *magnet = [Magnet spriteWithTexture:magnetTexture_ rect:CGRectMake(0,0,64,64)];
-        
         [magnetParent addChild:magnet];
         magnet.position = ccp(s.width/2, s.height/2);
         player.magnet = magnet;
@@ -120,7 +119,7 @@ enum {
 	CGSize s = [[CCDirector sharedDirector] winSize];
 	
 	b2Vec2 gravity;
-	gravity.Set(0.0f, -10.0f);
+	gravity.Set(0.0f, -0.1f);
 	world = new b2World(gravity);
 	
 	
@@ -193,9 +192,9 @@ enum {
 	CCNode *parent = [self getChildByTag:kTagNodeScrap];
 	
 	ScrapMetal *sprite = [ScrapMetal spriteWithTexture:scrapTexture_ rect:CGRectMake(0,0,64,64)];
+    [sprite setPosition:ccp( p.x, p.y)];
+    //sprite.position = ccp( p.x, p.y);
 	[parent addChild:sprite];
-	
-	sprite.position = ccp( p.x, p.y);
 	
 	// Define the dynamic body.
 	//Set up a 1m squared box in the physics world
@@ -274,20 +273,6 @@ enum {
 		
 		[self addNewScrapAtPosition: location];
 	}
-}
-
-#pragma mark GameKit delegate
-
--(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController
-{
-	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissModalViewControllerAnimated:YES];
-}
-
--(void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
-{
-	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissModalViewControllerAnimated:YES];
 }
 
 @end
