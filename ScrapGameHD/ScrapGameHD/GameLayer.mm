@@ -89,8 +89,6 @@ enum {
         magnet.position = ccp(s.width/2, s.height/2);
         player.magnet = magnet;
         
-		[self addNewScrapAtPosition:ccp(s.width/2, s.height/2)];
-        
 		
 		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tap screen" fontName:@"Marker Felt" fontSize:32];
 		[self addChild:label z:0];
@@ -115,7 +113,6 @@ enum {
 
 -(void) initPhysics
 {
-	
 	CGSize s = [[CCDirector sharedDirector] winSize];
 	
 	b2Vec2 gravity;
@@ -184,6 +181,14 @@ enum {
 	kmGLPushMatrix();
 	world->DrawDebugData();	
 	kmGLPopMatrix();
+}
+
+-(void) addNewRandomScrap
+{
+    CGSize s = [[CCDirector sharedDirector] winSize];
+    
+    int x = (10 + (rand() % ((int)(s.width - 20))));
+    [self addNewScrapAtPosition:ccp(x, s.height)];
 }
 
 -(void) addNewScrapAtPosition:(CGPoint)p
@@ -271,7 +276,7 @@ enum {
 		
 		location = [[CCDirector sharedDirector] convertToGL: location];
 		
-		[self addNewScrapAtPosition: location];
+		[self addNewRandomScrap];
 	}
 }
 

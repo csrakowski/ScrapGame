@@ -6,17 +6,13 @@
 //
 //
 
-#import "cocos2d.h"
-#import "Box2D.h"
+#import "PhysicsSprite.h"
 
-@interface ScrapMetal : CCSprite
+@interface ScrapMetal : PhysicsSprite
 {
-	b2Body *body_;	// strong ref
-    
     b2Vec2 vector;
 }
 
--(void) setPhysicsBody:(b2Body*)body;
 -(void) tick;
 
 @end
